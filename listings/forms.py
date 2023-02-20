@@ -10,4 +10,5 @@ class ListingForm(ModelForm):
             "price",
             "size_sq_ft",
             "address",
+            "image"
         ]

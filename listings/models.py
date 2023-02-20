@@ -6,7 +6,7 @@ class Listing(models.Model):
     price = models.IntegerField()
     size_sq_ft = models.IntegerField()
     address = models.CharField(max_length=100)
-    # image
+    image = models.ImageField()
 
     def __str__(self):
         return self.title

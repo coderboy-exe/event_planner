@@ -27,7 +27,7 @@ def create_listing(request):
     form = ListingForm()
     # Validate request
     if request.method == "POST":
-        form = ListingForm(request.POST)
+        form = ListingForm(request.POST, request.FILES)
         print(request.POST)
         if form.is_valid():
             form.save() # This method is available on model forms
@@ -46,7 +46,7 @@ def update_listing(request, id):
 
     # Validate request
     if request.method == "POST":
-        form = ListingForm(request.POST, instance=listing)
+        form = ListingForm(request.POST, request.FILES, instance=listing)
         print(request.POST)
         if form.is_valid():
             form.save() # This method is available on model forms
